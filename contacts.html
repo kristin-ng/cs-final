@@ -8,6 +8,19 @@
       content="width=device-width, initial-scale-1, user-scalable=no"
     />
     <link rel="stylesheet" href="index.css" />
+    <style>
+        .column1 {
+            float: left;
+            width: 40%;
+            margin-left: 100px;
+        }
+        
+        .column2 {
+            margin-top: 30px;
+            padding-left: 1em;
+            padding-top: 0;
+        }
+    </style>
     <script lang="javascript">
       // Allow = #method;
 
@@ -65,21 +78,28 @@
   Mailing Address: 161 College Avenue, Medford, Massachusetts 02155
 </p>
 
-        <article class="content"> 
-          <form class="user-input" name="data" method="get" onsubmit="return validate()">
-            <h2>Join Our E-List!</h2>
-            <input type="text" name="name" placeholder="name"/>
-          
-            <br />
-            <input type="text" name="email" placeholder="email"/> <br />
-            
-            <br />
-            <input type="submit" value="Submit" class="submit-btn"/>
-
-         </article>
-      <hr />
-
   </body>
+  
+  <div class=column1>
+          <article class="content"> 
+            <form class="user-input" name="data" method="get" onsubmit="return validate()">
+              <h2>Join Our E-List!</h2>
+              <input type="text" name="name" placeholder="name"/>
+            
+              <br />
+              <input type="text" name="email" placeholder="email"/> <br />
+              
+              <br />
+              <input type="submit" value="Submit" class="submit-btn"/>
+
+           </article>
+  </div>
+
+  <div class="column2">
+  <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJP-zOkNx244kRjoFWmsdMII0&key=AIzaSyDLYuWRR_Wdu9721xVnohwZktYXovHJTto"></iframe>
+  </div>
+  
+  <hr />
       <footer>
         Company © Halligan Helper. All rights reserved.
     </footer>
