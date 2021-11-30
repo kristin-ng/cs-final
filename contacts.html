@@ -29,12 +29,12 @@
         with (document.data) {
           if (email.value == "") {
             alert("Email is required");
-            //email.focus();
+            email.focus();
             valid = false;
           }
           if (name.value == "") {
-            alert("Phone is required");
-            //name.focus();
+            alert("Name is required");
+            name.focus();
             valid = false;
           }
         }
@@ -84,10 +84,17 @@
           <article class="content"> 
             <form class="user-input" name="data" method="get" onsubmit="return validate()">
               <h2>Join Our E-List!</h2>
-              <input type="text" name="name" placeholder="name"/>
+              <br />
+              <input type="text" name="fname" placeholder="First Name"/>
             
               <br />
-              <input type="text" name="email" placeholder="email"/> <br />
+              <input type="text" name="lname" placeholder="Last Name"/>
+            
+              <br />
+              <input type="text" name="number" placeholder="Number"/> 
+              
+              <br />
+              <input type="text" name="email" placeholder="Email"/> <br />
               
               <br />
               <input type="submit" value="Submit" class="submit-btn"/>
