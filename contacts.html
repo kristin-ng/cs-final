@@ -23,23 +23,79 @@
     </style>
     <script lang="javascript">
       // Allow = #method;
-
+      
+      // verifies first name
+      function verifyFName()
+      {
+          with (document.data) {
+              var regex = /^[a-zA-Z]+$/;
+              if (!regex.test(fname.value)) {
+                  alert("First name is invalid. Please enter your first name");
+                  fname.focus();
+                  return false;
+              }
+              return true;
+          }
+      }
+      
+      // verifies last name
+      function verifyLName()
+      {
+          with (document.data) {
+              var regex = /^[a-zA-Z]+$/;
+              if (!regex.test(lname.value)) {
+                  alert("Last name is invalid. Please enter your last name");
+                  lname.focus();
+                  return false;
+              }
+              return true;
+          }
+      }
+      
+      // verifies number
+      function verifyNumber()
+      {
+          with (document.data) {
+              var regex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+              if (!regex.test(number.value)) {
+                  alert("Number is invalid. Please use the form XXX-XXX-XXXX");
+                  number.focus();
+                  return false;
+              }
+              return true;
+          }
+      }
+      
+      // verifies email
+      function verifyEmail()
+      {
+          with (document.data) {
+              var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+              if (!regex.test(email.value)) {
+                  alert("Email is invalid. Please enter your email");
+                  email.focus();
+                  return false;
+              }
+              return true;
+          }
+      }
+      
       function validate() {
         valid = true;
-        with (document.data) {
-          if (email.value == "") {
-            alert("Email is required");
-            email.focus();
-            valid = false;
-          }
-          if (name.value == "") {
-            alert("Name is required");
-            name.focus();
-            valid = false;
-          }
+        if(!verifyFName()) {
+          valid = false;
+        }
+        if(!verifyLName()) {
+          valid = false;
+        }
+        if(!verifyNumber()) {
+          valid = false;
+        }
+        if(!verifyEmail()) {
+          valid = false;
         }
         if (valid) {
-          alert("congrats!");
+          alert("Thank you for joining our E-List!");
         }
         return valid;
       }
