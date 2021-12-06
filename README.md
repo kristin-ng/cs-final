@@ -10,5 +10,4 @@ Link to the page: https://kristin-ng.github.io/cs20-final/
     git push
 4. to clone: 
    git clone THIS_GITHUB_URL
-5. it is essential to update your branch first BEFORE doing anything (don't make me merging branches be the bane of my existence)
-   git pull
+5. UPDATE YOUR BRANCH BEFORE ADDING NEW CODE WITH GIT PULL (don't make me merging branches be the bane of my existence)
