@@ -152,8 +152,9 @@
           }
           
       ?>
-      
+      <form action="order.php" method="post">
       <table border="0" cellpadding="3" onchange="updateCosts()" style="margin-left: auto; margin-right: auto;">
+      <input type="hidden" name="productNames" value="Electronic Energy Drinks,Java Coffee,C++ Tea,Python Protein Bars,React Ramen,C Food Platter,MatLab MeatLoaf,Halligan Hamburgers,Phone charger (per hour),Laptop charger (per hour),Sleeping bags,Spray Shampoo,Tampons/Pad,Deodorant,Perfume">
         <tr>
           <th>Images</th>
           <th>Select Item</th>
@@ -181,8 +182,8 @@
       </p>
       <p>Total: $ <input type="text" name='total' id="total" />
       </p>
-      <input type="button" value="Submit Order" onclick="submitOrder()" />
-      <p id="results"></p>
+      <input type = "submit" value = "Submit Order"/>
+      </form>
     </div>
   </div>
   <hr />
