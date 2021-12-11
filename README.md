@@ -1,6 +1,7 @@
 # cs20-final
 
 - Link to the page: https://kristin-ng.github.io/cs20-final/ 
+- Link to the page (with php): http://erikahowell.rf.gd/index.html
 
 - Link to the slides: https://docs.google.com/presentation/d/13cCvWuBjkwV1Muhy1DtYDdkq0VeRbfg9VphV3Ftyo5g/edit?usp=sharing
 
