@@ -28,7 +28,7 @@
      </div>
  </div>
  
- <h1>Thank you for your order!</h1>
+ <h1>Order Summary</h1>
 
 
 <!-- Get form data -->
@@ -69,33 +69,42 @@
 
 
     $productNames = explode(",", $_REQUEST["productNames"], 15);
-    echo "Thank you for your order of: <br>";
+    echo "Below is a detailed summary of your order: <br>";
     // print name, quan, and cost for each product
+    $orderSuccess = True;
     for ($i = 0; $i < 15; $i++) {
         $quantity = $_REQUEST["quan$i"];
         $name = $productNames[$i];
         if ($quantity > 0) {
             $left = $amount[$i] - $quantity;
-            // update stock left
-            $sql = "UPDATE products SET ItemsLeft=$left WHERE Name='$name'";
-            if (!mysqli_query($conn, $sql)) {
-                echo "Error updating record: " . mysqli_error($conn);
+            if ($amount[$i] <= 0) {
+                $orderSuccess = False;
+                $s = "Order failed! Your item is not in stock!";
+                $i = 15;
             }
-            echo $quantity . " " . $name . " for ";
-            echo "$" . $_REQUEST["cost$i"];
-            echo "<br>";
+            if ($orderSuccess) {
+                // update stock left
+                $sql = "UPDATE products SET ItemsLeft=$left WHERE Name='$name'";
+                if (!mysqli_query($conn, $sql)) {
+                    echo "Error updating record: " . mysqli_error($conn);
+                }
+                echo $quantity . " " . $name . " for ";
+                echo "$" . $_REQUEST["cost$i"];
+                echo "<br>";
+            }
         }
     }
     echo $s;
     // print subtotal, tax, total
-    $total = $_REQUEST["total"];
-    echo " <br> Subtotal $";
-    echo $_REQUEST["subtotal"] . "<br>";
-    echo "Tax $";
-    echo $_REQUEST["tax"] . "<br>";
-    echo "Total $";
-    echo $total . "<br> <br>";
-    
+    if ($orderSuccess) {
+        $total = $_REQUEST["total"];
+        echo " <br> Subtotal $";
+        echo $_REQUEST["subtotal"] . "<br>";
+        echo "Tax $";
+        echo $_REQUEST["tax"] . "<br>";
+        echo "Total $";
+        echo $total . "<br> <br>";
+    }
 ?>
 </body>
 </html>
