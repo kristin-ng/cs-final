@@ -132,6 +132,26 @@
   Mailing Address: 161 College Avenue, Medford, Massachusetts 02155
 </p>
 
+<?php
+      $server = "sql304.epizy.com";
+      $userid = "epiz_29722285";
+      $pw = "ny8b6tbqsUQT7ML";
+      $db= "epiz_29722285_halliganhelper";
+      
+      $to = document.getElementsByTagName("email");
+      $sub = "Welcome to Halligan Helper's E-List!";
+      $msg = "Thank you for joining Halligan Helper's E-List!";
+      $msg += "You will be emailed about updates and sales for Halligan Helper.";
+      $msg += "For now, check out our products page! http://erikahowell.rf.gd/products.php"; 
+      $sent = mail($to, $sub, $msg);
+
+      if( $sent == true ) {
+        echo "Message sent successfully...";
+     }else {
+        echo "Message could not be sent...";
+     }
+    ?>
+
   </body>
   
   <div class=column1>
@@ -159,6 +179,7 @@
   <div class="column2">
   <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJP-zOkNx244kRjoFWmsdMII0&key=AIzaSyDLYuWRR_Wdu9721xVnohwZktYXovHJTto"></iframe>
   </div>
+
   
   <hr />
       <footer>
