@@ -139,21 +139,37 @@
               
               $i = 0;
               foreach($products as $name=>$price) {
-                  $s .= "<tr><td>";
-                  $s .= "<img class='' src='product_images/product" . $i . ".jpg' width='100' height='75'></img></td><td>";
-                  $s .= makeSelect("quan" . $i, 0, 10);
-                  $s .= "</td><td>" . $name . "</td>";
-                  $s .= "</td><td>" . $amount[$i] . "</td>";
-                  $s .= "<td> $" . number_format((float)$price, 2, '.', '') . "</td>";
-                  $s .= "<td>$<input type='text' name='cost" . $i . "'/></td></tr>";
+                  makeIndividualMenu($name, $price, $i);
                   $i++;
               }
               return $s;
           }
+
+          function makeIndividualMenu($name, $price, $i) {
+              $s .= "<tr><td>";
+              $s .= "<img class='' src='product_images/product" . $i . ".jpg' width='100' height='75'></img></td><td>";
+              $s .= makeSelect("quan" . $i, 0, 10);
+              $s .= "</td><td>" . $name . "</td>";
+              $s .= "</td><td>" . $amount[$i] . "</td>";
+              $s .= "<td> $" . number_format((float)$price, 2, '.', '') . "</td>";
+              $s .= "<td>$<input type='text' name='cost" . $i . "'/></td></tr>";
+          }
+
+          function verification() 
+            $i = 0;{
+            foreach($products as $name=>$price) {
+              if ($amount[i] <= 0) { // Warn user and reset menu for the product
+                echo "alert(" . $name . "' is out of stock!')";
+                makeIndividualMenu($name, $price, $i);
+              }
+            }
+            i++;
+            updateCosts();
+          }
           
       ?>
       <form action="order.php" method="post">
-      <table border="0" cellpadding="3" onchange="updateCosts()" style="margin-left: auto; margin-right: auto;">
+      <table border="0" cellpadding="3" onchange="verification()" style="margin-left: auto; margin-right: auto;">
       <input type="hidden" name="productNames" value="Electronic Energy Drinks,Java Coffee,C++ Tea,Python Protein Bars,React Ramen,C Food Platter,MatLab MeatLoaf,Halligan Hamburgers,Phone charger (per hour),Laptop charger (per hour),Sleeping bags,Spray Shampoo,Tampons/Pad,Deodorant,Perfume">
         <tr>
           <th>Images</th>
