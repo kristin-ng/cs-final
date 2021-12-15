@@ -78,7 +78,7 @@
         $name = $productNames[$i];
         if ($quantity > 0) {
             $left = $amount[$i] - $quantity;
-            if ($amount[$i] <= 0) {
+            if ($left <= 0) {
                 $orderSuccess = False;
                 $s = "Order failed! Your item is not in stock!";
                 $i = 15;
