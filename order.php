@@ -70,6 +70,7 @@
 
     $productNames = explode(",", $_REQUEST["productNames"], 15);
     echo "Below is a detailed summary of your order: <br>";
+    echo "<br>";
     // print name, quan, and cost for each product
     $orderSuccess = True;
     for ($i = 0; $i < 15; $i++) {
