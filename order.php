@@ -89,7 +89,7 @@
                 if (!mysqli_query($conn, $sql)) {
                     echo "Error updating record: " . mysqli_error($conn);
                 }
-                echo $quantity . " " . $name . " for ";
+                echo $quantity . " " . $name . " for              ";
                 echo "$" . $_REQUEST["cost$i"];
                 echo "<br>";
             }
@@ -99,11 +99,11 @@
     // print subtotal, tax, total
     if ($orderSuccess) {
         $total = $_REQUEST["total"];
-        echo " <br> Subtotal $";
+        echo " <br> Subtotal                                  $";
         echo $_REQUEST["subtotal"] . "<br>";
-        echo "Tax $";
+        echo "Tax                                             $";
         echo $_REQUEST["tax"] . "<br>";
-        echo "Total $";
+        echo "Total                                           $";
         echo $total . "<br> <br>";
     }
 ?>
